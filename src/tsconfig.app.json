@@ -9,10 +9,7 @@
     "outDir": "../out-tsc/app",
     "module": "es2015",
     "baseUrl": "",
-    "types": [],
-    "paths": {
-      "@my/lib": [ "../my-lib/src/public_api.ts" ]
-    }
+    "types": []
   },
   "exclude": [
     "test.ts",

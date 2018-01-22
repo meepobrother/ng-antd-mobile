@@ -15,10 +15,7 @@
     "lib": [
       "es2016",
       "dom"
-    ],
-    "paths": {
-      "ng-antd-mobile": [ "dist/ng-antd-mobile" ]
-    }
+    ]
   },
   "exclude": [
     ".ng_build"

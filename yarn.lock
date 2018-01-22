@@ -4403,6 +4403,10 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
+meepo-common@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/meepo-common/-/meepo-common-1.0.7.tgz#71758cc956b7d7eb3a5db49f26472cf0553585dd"
+
 meepo-utils@^1.0.0-alpha.0:
   version "1.0.0-alpha.0"
   resolved "https://registry.yarnpkg.com/meepo-utils/-/meepo-utils-1.0.0-alpha.0.tgz#9fbf09d11f8378f9e7c4b7ec5cdf4a16a367afce"
@@ -4657,6 +4661,10 @@ ng-packagr@2.0.0-rc.10:
     sorcery "^0.10.0"
     stylus "^0.54.5"
     uglify-js "^3.0.7"
+
+ng-react-component@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/ng-react-component/-/ng-react-component-1.0.6.tgz#093851039fd65a1fee3184f7ebaef845a7f05642"
 
 no-case@^2.2.0:
   version "2.3.2"

@@ -7,7 +7,8 @@ import {
     Output, EventEmitter, TemplateRef
 } from '@angular/core';
 import { ListItemComponent } from '../list/list-item/list-item';
-import { fromEvent, merge } from 'meepo-utils';
+import { fromEvent, merge } from 'meepo-common';
+
 @Component({
     selector: 'input-item',
     templateUrl: './input-item.html',

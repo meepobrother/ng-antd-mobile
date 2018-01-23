@@ -1,9 +1,6 @@
-<h2>
-    测试
-</h2>
-
 <list>
-    <div *ngEach="let item of props">
-        <input-item></input-item>
+    <div *ngEach="let item of props;key as name;">
+        <input-item [placeholder]="item.placeholder" [type]="item.type" [editable]="item.editable" [disabled]="item.disabled" [name]="name">{{item.title}}</input-item>
+        <radio *ngIf="item.type === 'radio'">{{item.title}}</radio>
     </div>
 </list>

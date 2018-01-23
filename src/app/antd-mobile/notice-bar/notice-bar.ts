@@ -4,7 +4,7 @@ import {
     EventEmitter, Output, ViewChild, ElementRef, AfterViewInit
 } from '@angular/core';
 import { noticeBarPrefixCls } from './val';
-import { ansycClassObj, merge, setClassObj, isMeepoTrue } from 'meepo-utils';
+import { ansycClassObj, merge, setClassObj, isMeepoTrue } from 'meepo-common';
 
 @Component({
     selector: 'notice-bar',

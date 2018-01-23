@@ -1,5 +1,5 @@
 import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
-import { ansycClassObj, merge, setClassObj } from 'meepo-utils';
+import { ansycClassObj, merge, setClassObj } from 'meepo-common';
 import { prefixCls, flexPrefixCls } from './val';
 
 @Component({

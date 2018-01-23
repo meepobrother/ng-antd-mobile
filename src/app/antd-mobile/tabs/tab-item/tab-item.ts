@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { tabsDefaultBarPrefixCls } from '../var';
-import { ansycClassObj } from 'meepo-utils';
+import { ansycClassObj } from 'meepo-common';
 import { TabsComponent } from '../tabs';
 import { TabPanelComponent } from '../tab-panel/tab-panel';
 @Component({

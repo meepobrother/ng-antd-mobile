@@ -5,7 +5,7 @@ import {
     Injectable, AfterContentInit, OnDestroy
 } from '@angular/core';
 import { prefixCls, tabsDefaultBarPrefixCls } from './var';
-import { ansycClassObj, merge, setClassObj } from 'meepo-utils';
+import { ansycClassObj, merge, setClassObj } from 'meepo-common';
 import { TabItemComponent } from './tab-item/tab-item';
 import { TabPanelComponent } from './tab-panel/tab-panel';
 

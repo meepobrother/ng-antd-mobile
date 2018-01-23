@@ -3,7 +3,7 @@ import {
     Input, HostBinding, OnInit,
     InjectionToken, Inject, ChangeDetectionStrategy
 } from '@angular/core';
-import { setClassObj, isMeepoTrue } from 'meepo-utils';
+import { setClassObj, isMeepoTrue } from 'meepo-common';
 import { HttpClient } from '@angular/common/http';
 import { IconStore } from './icon.service';
 

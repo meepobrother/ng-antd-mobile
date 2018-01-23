@@ -4,7 +4,7 @@ import {
     ElementRef, Renderer2, ContentChild, TemplateRef,
     HostListener, ViewChild, EventEmitter, Output
 } from '@angular/core';
-import { fromEvent, isMeepoTrue, merge } from 'meepo-utils';
+import { fromEvent, isMeepoTrue, merge } from 'meepo-common';
 import { listPrefixCls } from '../var';
 import { Antd } from '../../antd';
 import { ListRippleDirective } from '../list-ripple/list-ripple';

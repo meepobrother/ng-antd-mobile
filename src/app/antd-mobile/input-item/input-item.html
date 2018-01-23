@@ -19,7 +19,7 @@
     <div class="am-input-extra" (click)="_onExtra($event)" *ngIf="extra && extraType !== 'string'">
         <ng-container *ngTemplateOutlet="extra"></ng-container>
     </div>
-    <div class="am-input-clear" (click)="_onClear($event)"></div>
+    <div class="am-input-clear" *ngIf="clear" (click)="_onClear($event)"></div>
     <div class="am-input-error-extra" (click)="_onError($event)"></div>
 </div>
 <div listRipple style="display: none;"></div>

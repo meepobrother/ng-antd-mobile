@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { APP_BASE_HREF } from '@angular/common';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { ListModule, InputItemModule } from './antd-mobile/public_api';
+import { ListModule, InputItemModule, RadioModule } from './antd-mobile/public_api';
 import { MeepoCommonModule } from 'meepo-common';
 @NgModule({
   declarations: [
@@ -15,9 +17,16 @@ import { MeepoCommonModule } from 'meepo-common';
     HttpModule,
     ListModule, 
     InputItemModule,
-    MeepoCommonModule
+    MeepoCommonModule,
+    ReactiveFormsModule,
+    RadioModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useValue: './'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

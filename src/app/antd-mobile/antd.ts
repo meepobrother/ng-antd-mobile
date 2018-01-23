@@ -1,4 +1,4 @@
-import { ansycClassObj, isMeepoTrue, setClassObj } from 'meepo-utils';
+import { ansycClassObj, isMeepoTrue, setClassObj } from 'meepo-common';
 import { Renderer2, ElementRef, Input, HostBinding } from '@angular/core';
 export class Antd {
     _class: Object = {};

@@ -4,7 +4,8 @@ import {
     Input, HostBinding, OnInit,
     InjectionToken, Inject, ChangeDetectionStrategy,
     ElementRef, Renderer2, ViewChild,
-    Output, EventEmitter, TemplateRef
+    Output, EventEmitter, TemplateRef,
+    ChangeDetectorRef
 } from '@angular/core';
 import { ListItemComponent } from '../list/list-item/list-item';
 import { fromEvent, merge } from 'meepo-common';
@@ -23,12 +24,16 @@ export class InputItemComponent extends ListItemComponent implements OnInit {
     @Input() value: string;
     @Input() defaultValue: string;
     @Input() placeholder: string;
-    @Input() editable: boolean = true;
-
+    @Input() name: string;
+    @Input() extra: string | TemplateRef<any>;
+    @Input() labelNumber: number = 5;
+    @Input() updatePlaceholder: boolean = false;
+    @Input() moneyKeyboardAlign: 'left' | 'right';
     _disabled: boolean = false;
     @Input()
     set disabled(val: any) {
         const _disabled = this.isMeepoTrue(val);
+        this._disabled = _disabled;
         if (_disabled) {
             this.render.setAttribute(this.input.nativeElement, 'disabled', '');
             this.addToClass('am-input-disabled', true, false);
@@ -37,19 +42,28 @@ export class InputItemComponent extends ListItemComponent implements OnInit {
             this.addToClass('am-input-disabled', false, false);
         }
     }
-
-    _readonly: boolean = false;
+    _editable: boolean = false;
     @Input()
-    set readonly(val: any) {
-        this._readonly = this.isMeepoTrue(val);
-        if (this._readonly) {
-            this.render.setAttribute(this.input.nativeElement, 'readonly', '');
-        } else {
+    set editable(val: any) {
+        const _disabled = this.isMeepoTrue(val);
+        this._editable = _disabled;
+        if (_disabled) {
             this.render.removeAttribute(this.input.nativeElement, 'readonly');
+        } else {
+            this.render.setAttribute(this.input.nativeElement, 'readonly', '');
         }
     }
 
-    @Input() clear: boolean = false;
+    _clear: boolean = false;
+    @Input()
+    set clear(val: any) {
+        const _disabled = this.isMeepoTrue(val);
+        this._clear = _disabled;
+    }
+    get clear() {
+        return this._clear;
+    }
+
     @Input() maxLength: number;
     @Input()
     set error(val: any) {
@@ -60,11 +74,6 @@ export class InputItemComponent extends ListItemComponent implements OnInit {
             this.addToClass('am-input-error', false, false);
         }
     }
-    @Input() extra: string | TemplateRef<any>;
-    @Input() labelNumber: number = 5;
-    @Input() updatePlaceholder: boolean = false;
-    @Input() name: string;
-    @Input() moneyKeyboardAlign: 'left' | 'right';
 
     @Output() onChange: EventEmitter<any> = new EventEmitter();
     @Output() onBlur: EventEmitter<any> = new EventEmitter();
@@ -73,7 +82,8 @@ export class InputItemComponent extends ListItemComponent implements OnInit {
     @Output() onExtraClick: EventEmitter<any> = new EventEmitter();
 
     constructor(
-        ele: ElementRef, render: Renderer2
+        ele: ElementRef,
+        render: Renderer2
     ) {
         super(ele, render);
         this.addToClass('am-input-item', true, false);
@@ -104,9 +114,6 @@ export class InputItemComponent extends ListItemComponent implements OnInit {
     ngOnInit() {
         this.arrow = 'empty';
         const change = merge(
-            // fromEvent(this.input.nativeElement, 'change'),
-            // fromEvent(this.input.nativeElement, 'keyup'),
-            // fromEvent(this.input.nativeElement, 'keydown'),
             fromEvent(this.input.nativeElement, 'input'),
             fromEvent(this.input.nativeElement, 'propertychange')
         );
@@ -120,7 +127,7 @@ export class InputItemComponent extends ListItemComponent implements OnInit {
             });
         blur.subscribe(res => {
             setTimeout(() => {
-                if (!this._readonly) {
+                if (this.clear) {
                     this.addToClass('am-input-focus', false, false);
                     this.onBlur.emit(res);
                 }
@@ -128,7 +135,7 @@ export class InputItemComponent extends ListItemComponent implements OnInit {
         });
         focus.subscribe(res => {
             setTimeout(() => {
-                if (!this._readonly) {
+                if (this.clear) {
                     this.addToClass('am-input-focus', true, false)
                     this.onFocus.emit(res);
                 }

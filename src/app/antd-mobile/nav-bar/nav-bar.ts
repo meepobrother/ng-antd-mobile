@@ -3,7 +3,7 @@ import {
     HostBinding, Input, ContentChild, TemplateRef
 } from '@angular/core';
 import { navbarPrefixCls } from './val';
-import { ansycClassObj, merge, setClassObj, isMeepoTrue } from 'meepo-utils';
+import { ansycClassObj, merge, setClassObj, isMeepoTrue } from 'meepo-common';
 @Component({
     selector: 'nav-bar',
     templateUrl: './nav-bar.html',

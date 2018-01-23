@@ -3,7 +3,8 @@ import {
     Input, ElementRef, Renderer2, ContentChild,
     TemplateRef
 } from '@angular/core';
-import { ansycClassObj, isMeepoTrue } from 'meepo-utils';
+import { isMeepoTrue } from 'meepo-common';
+
 import { listPrefixCls } from './var';
 import { Antd } from '../antd';
 @Component({

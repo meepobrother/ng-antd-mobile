@@ -11,7 +11,7 @@ import {
 import { Antd } from '../antd';
 import { ScrollDispatcher, CdkScrollable, ViewportRuler } from '@angular/cdk/scrolling';
 import { Platform } from '@angular/cdk/platform';
-import { Scroller, isMeepoTrue } from 'meepo-utils';
+import { isMeepoTrue, Scroller } from 'meepo-common';
 const listView = 'am-list-view';
 @Component({
     selector: 'list-view',
